@@ -1,0 +1,22 @@
+﻿@inject AppService service
+
+<div class="controls">
+    @foreach (var control in controls)
+    {
+        <NavLink href="@control.Url">
+            <Control ControlActive=@control.ControlActive
+                 ControlIcon=@control.ControlIcon />
+        </NavLink>
+    }
+</div>
+
+<ThemeButton />
+
+@code {
+    private List<ControlData>? controls;
+
+    protected override async Task OnInitializedAsync()
+    {
+        controls = await service.GetControls();
+    }
+}

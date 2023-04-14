@@ -1,0 +1,30 @@
+﻿<div class="portfolio-item">
+    <div class="image">
+        <img src=@Image alt="">
+    </div>
+    <div class="hover-items">
+        <h3>Ver Projecto</h3>
+        <div class="icons">
+            @if(UrlGitHub != string.Empty)
+            {
+                <a href="@UrlGitHub" class="icon">
+                    <i class="fab fa-github"></i>
+                </a>
+            }
+            <a href="@Url" class="icon">
+                <i class="fab fa-behance"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? Image { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? Url { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? UrlGitHub { get; set; } = string.Empty;
+}

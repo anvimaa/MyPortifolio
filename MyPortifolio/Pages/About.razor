@@ -1,0 +1,53 @@
+﻿@page "/about"
+
+<section class="container about active">
+    <div class="main-title">
+        <h2>Sobre <span>mi</span><span class="bg-text">my stats</span></h2>
+    </div>
+    <div class="about-container">
+        <div class="left-about">
+            <h4>Informações sobre min</h4>
+            <p>
+                Anvima.... 
+            </p>
+            <Button Url="" Text="Baixar CV" Icon="fa-download" />
+        </div>
+
+        <div class="right-about">
+            <AboutItem Title="10+" PrimaryText="Projectos" SecundaryText="Completados" />
+            <AboutItem Title="5+" PrimaryText="Anos de" SecundaryText="Experiecia" />
+            <AboutItem Title="20+" PrimaryText="Clientes" SecundaryText="Satisfeitos" />
+            <AboutItem Title="1000+" PrimaryText="Visualicações" SecundaryText="Feitas" />
+        </div>
+    </div>
+
+    <div class="about-stats">
+
+        <StatTitle Title="Minhas Habilidades..." />
+
+        <div class="progress-bars">
+            <ProgressBar Title="C#" Percent="85%" />
+            <ProgressBar Title="ASP.NET Core" Percent="85%" />
+            <ProgressBar Title="VB.NET" Percent="85%" />
+            <ProgressBar Title="Pyhton" Percent="85%" />
+            <ProgressBar Title="HTML5" Percent="85%" />
+            <ProgressBar Title="CSS" Percent="85%" />
+        </div>
+    </div>
+
+    <StatTitle Title="Linha do Tempo..." />
+
+    <div class="timeline">
+        <TimeLineItem Title="2010 - 2012"
+                      Position="Estudante"
+                      Local="Escola 4 Aisa"
+                      Description="Estuadei durante..."
+                      Icon="fa-briefcase" />
+
+        <TimeLineItem Title="2010 - 2012"
+                      Position="Estudante"
+                      Local="Escola 4 Aisa"
+                      Description="Estuadei durante..."
+                      Icon="fa-briefcase" />
+    </div>
+</section>

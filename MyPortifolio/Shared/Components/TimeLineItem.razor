@@ -1,0 +1,21 @@
+﻿<div class="timeline-item">
+    <div class="tl-icon">
+        <i class="fas @Icon"></i>
+    </div>
+    <p class="tl-duration">@Title</p>
+    <h5>@Position<span> - @Local</span></h5>
+    <p>@Description</p>
+</div>
+
+@code {
+    [Parameter]
+    public string? Icon { get; set; } = string.Empty;
+    [Parameter]
+    public string? Title { get; set; } = string.Empty;
+    [Parameter]
+    public string? Position { get; set; } = string.Empty;
+    [Parameter]
+    public string? Local { get; set; } = string.Empty;
+    [Parameter]
+    public string? Description { get; set; } = string.Empty;
+}

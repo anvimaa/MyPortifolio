@@ -1,0 +1,16 @@
+﻿<div class="control @(ControlActive ? "active-btn": "")" @onclick="OnClick">
+    <i class="fas @ControlIcon"></i>
+</div>
+
+@code {
+    [Parameter]
+    public string? ControlIcon { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool ControlActive { get; set; } = false;
+
+    void OnClick()
+    {
+        ControlActive = !ControlActive;
+    }
+}

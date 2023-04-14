@@ -1,0 +1,17 @@
+﻿<div class="about-item">
+    <div class="abt-text">
+        <p class="large-text">@Title</p>
+        <p class="small-text">@PrimaryText <br /> @SecundaryText</p>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? PrimaryText { get; set; }
+
+    [Parameter]
+    public string? SecundaryText { get; set; }
+}

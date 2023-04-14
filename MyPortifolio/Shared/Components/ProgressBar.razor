@@ -1,0 +1,31 @@
+﻿<div class="progress-bar">
+    <p class="prog-title">@Title</p>
+    <div class="progress-con">
+        <p class="prog-text">@Percent</p>
+        <div class="progress">
+            <span class=@percentClass></span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? Percent { get; set; } = string.Empty;
+
+    private string percentClass = "";
+
+    protected override void OnInitialized()
+    {
+        percentClass =
+        Percent == "80%" ? "perc-80" :
+        Percent == "95%" ? "perc-95" :
+        Percent == "75%" ? "perc-75" :
+        Percent == "60%" ? "perc-60" :
+        Percent == "87%" ? "perc-87" :
+        Percent == "70%" ? "perc-70" : "";
+    }
+
+}

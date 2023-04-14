@@ -1,0 +1,18 @@
+﻿<div class="blog">
+    <img src=@Image alt="">
+    <div class="blog-text">
+        <h4>@Title</h4>
+        <p>@Description</p>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Image { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Description { get; set; } = string.Empty;
+}
