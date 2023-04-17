@@ -3,6 +3,8 @@
     <div class="blog-text">
         <h4>@Title</h4>
         <p>@Description</p>
+
+        <Button Url=@Url Icon="fas fa-user" Text="Ver" />
     </div>
 </div>
 
@@ -15,4 +17,7 @@
 
     [Parameter]
     public string Description { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Url { get; set; } = string.Empty;
 }

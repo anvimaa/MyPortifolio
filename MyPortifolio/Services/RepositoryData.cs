@@ -78,7 +78,7 @@ namespace MyPortifolio.Services
                 "Certficado de eletrecidade"),
             new CertificacaoItemData(
                 "Certificado de Participação",
-                "/img/blog4.jpg",
+                "/img/blog3.jpg",
                 "Certificado de participação na feira do inventor do Uige 2019"),
         };
     }
