@@ -1,12 +1,12 @@
 ﻿namespace MyPortifolio.Data;
 
 public record PersonalInfo(
-    string FirtName,
+    string FirstName,
     string LastName,
     string Carrer,
     string Intro,
     string Description
     )
 {
-    public string FullName { get; set; } = FirtName + " " + LastName;
+    public string FullName { get; set; } = FirstName + " " + LastName;
 }

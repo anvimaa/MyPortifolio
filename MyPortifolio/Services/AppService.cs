@@ -1,8 +1,18 @@
 ﻿using MyPortifolio.Data;
+using System.Net.Http;
 
 namespace MyPortifolio.Services;
 public class AppService
 {
+    public HttpClient _httpClient;
+    public ILogger<AppService> _logger;
+
+    public AppService(HttpClient httpClient, ILogger<AppService> logger)
+    {
+        _httpClient = httpClient;
+        _logger = logger;
+    }
+
     public Task<List<ControlData>> GetControls()
     {
         List<ControlData> controls = new List<ControlData>
@@ -14,5 +24,11 @@ public class AppService
             new ControlData("contact", "fas fa-envelope-open"),
         };
         return Task.FromResult(controls);
+    }
+
+    public async Task<PersonalInfo> GetPersonalInfo()
+    {
+
+        return await _httpClient.GetFromJsonAsync<PersonalInfo>("/personalinfos/1");
     }
 }
