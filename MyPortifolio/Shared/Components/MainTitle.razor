@@ -1,0 +1,14 @@
+﻿<div class="main-title">
+    <h2>@Text1 <span>@Text2</span><span class="bg-text">@TextBack</span></h2>
+</div>
+
+@code {
+    [Parameter]
+    public string Text1 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Text2 { get; set; } = string.Empty;
+
+    [Parameter]
+    public string TextBack { get; set; } = string.Empty;
+}

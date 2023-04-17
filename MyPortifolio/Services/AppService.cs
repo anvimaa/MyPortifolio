@@ -7,11 +7,11 @@ public class AppService
     {
         List<ControlData> controls = new List<ControlData>
         {
-            new ControlData("", "fa-home", false),
-            new ControlData("about", "fa-user", false),
-            new ControlData("portifolio", "fa-briefcase", false),
-            new ControlData("blogs", "fa-newspaper", false),
-            new ControlData("contact", "fa-envelope-open", false),
+            new ControlData("", "fas fa-home"),
+            new ControlData("about", "fas fa-user"),
+            new ControlData("portifolio", "fas fa-briefcase"),
+            new ControlData("certificacoes", "fas fa-newspaper"),
+            new ControlData("contact", "fas fa-envelope-open"),
         };
         return Task.FromResult(controls);
     }

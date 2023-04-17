@@ -1,8 +1,8 @@
 ﻿@page "/"
 
-<PageTitle>Portifólio - Anvima</PageTitle>
+<PageTitle>Portifólio - @_data.FullName</PageTitle>
 
-<header class="container header active" id="home">
+<header class="container header active">
     <div class="header-content">
         <div class="left-header">
             <div class="h-shape"></div>
@@ -12,15 +12,15 @@
         </div>
         <div class="right-header">
             <h1 class="name">
-                Olá, eu sou o <span>António Vinda Mantente.</span>
-                Desenvolvedor FullStake.
+                Olá, eu sou o <span>@_data.FullName</span>,
+                @_data.Carrer.
             </h1>
-            <p>
-                I'm a Web Developer, I love to create beautiful and functional websites.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, libero?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque blanditiis sed aut!
-            </p>
-            <Button Text="Baixar CV" Icon="fa-download" Url="#" />
+            <p>@_data.Intro</p>
+            <CVButton />
         </div>
     </div>
 </header>
+
+@code {
+    private PersonalInfo _data = RepositoryData.PersonalInfo;
+}

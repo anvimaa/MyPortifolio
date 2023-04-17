@@ -1,18 +1,22 @@
 ﻿@page "/portifolio"
 
+<PageTitle>Portifólio - @RepositoryData.PersonalInfo.FullName</PageTitle>
+
 <section class="container active">
-    <div class="main-title">
-        <h2>Meu <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-    </div>
+
+    <MainTitle Text1="Meu" Text2="Protifólio" TextBack="my work" />
+
     <p class="port-text">
-        Esses são alguns dos projectos fiz durante a minha jornada.
+        Esses são alguns dos projectos que fiz durante a minha jornada.
     </p>
     <div class="portfolios">
-        <PortifolioItem Image="img/port2.jpg"
-                        Url="#" />
-
-        <PortifolioItem Image="img/port1.jpg"
-                        Url="#"
-                        UrlGitHub="#"/>
+        @foreach (var item in _itemDatas)
+        {
+            <PortifolioItem Image=@item.Image Url=@item.Url />
+        }
     </div>
 </section>
+
+@code {
+    private List<PortifolioItemData> _itemDatas = RepositoryData.PortifolioItems;
+}

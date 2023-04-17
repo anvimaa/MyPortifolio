@@ -1,3 +1,3 @@
 ﻿namespace MyPortifolio.Data;
 
-public record ControlData(string Url, string ControlIcon, bool ControlActive) { }
+public record ControlData(string Url, string Icon) { }

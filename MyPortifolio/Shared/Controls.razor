@@ -3,17 +3,15 @@
 <div class="controls">
     @foreach (var control in controls)
     {
-        <NavLink href="@control.Url">
-            <Control ControlActive=@control.ControlActive
-                 ControlIcon=@control.ControlIcon />
-        </NavLink>
+        <Control Url="@control.Url"
+             Icon=@control.Icon />
     }
 </div>
 
 <ThemeButton />
 
 @code {
-    private List<ControlData>? controls;
+    private List<ControlData> controls = new List<ControlData>();
 
     protected override async Task OnInitializedAsync()
     {

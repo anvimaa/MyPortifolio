@@ -1,0 +1,14 @@
+﻿<a href=@Url target="_blank" class=@Class>
+    <i class=@Icon></i>
+</a>
+
+@code {
+    [Parameter]
+    public string Icon { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Url { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Class { get; set; } = string.Empty;
+}

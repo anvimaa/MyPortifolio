@@ -1,7 +1,10 @@
-﻿<div class="theme-btn">
+﻿<div class="theme-btn" @onclick=OnClick>
     <i class="fas fa-adjust"></i>
 </div>
 
 @code {
-   
+    void OnClick()
+    {
+        Console.WriteLine("Theme BTN");
+    }
 }
