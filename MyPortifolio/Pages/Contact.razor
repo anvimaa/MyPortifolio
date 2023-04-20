@@ -10,16 +10,17 @@
                 <h4>Entre em Contacto comigo</h4>
                 <p></p>
                 <div class="contact-info">
-                    <ContactItem Icon="fa fa-phone" Title="Telefone 1" Text="(+244) 934342795" />
-                    <ContactItem Icon="fa fa-phone" Title="Telefone 2" Text="(+244) 953192762" />
-                    <ContactItem Icon="fab fa-whatsapp" Title="WhatsApp" Text="(+244) 953192762" />
-                    <ContactItem Icon="fa fa-envelope" Title="Email" Text="anvimma@gamil.com" />
+                    @foreach (var item in _contacts)
+                    {
+                        <ContactItem Icon=@item.Icon Title=@item.Title Description=@item.Description />
+                    }
                 </div>
                 <div class="contact-icons">
                     <div class="contact-icon">
-                        <SocialIcon Icon="fab fa-facebook" Url="www.facebook.com" />
-                        <SocialIcon Icon="fab fa-github" Url="www.facebook.com" />
-                        <SocialIcon Icon="fab fa-youtube" Url="www.facebook.com" />
+                        @foreach (var item in _socials)
+                        {
+                            <SocialIcon Icon=@item.Icon Url=@item.Url />
+                        }
                     </div>
                 </div>
             </div>
@@ -49,5 +50,6 @@
 </section>
 
 @code {
-
+    private List<ContactItemData> _contacts = RepositoryData.ContactItems;
+    private List<SocialItems> _socials = RepositoryData.SocialItems;
 }

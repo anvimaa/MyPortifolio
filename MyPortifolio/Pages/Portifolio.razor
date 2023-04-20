@@ -1,4 +1,5 @@
 ﻿@page "/portifolio"
+@inject AppService service
 
 <PageTitle>Portifólio - @RepositoryData.PersonalInfo.FullName</PageTitle>
 
@@ -12,11 +13,13 @@
     <div class="portfolios">
         @foreach (var item in _itemDatas)
         {
-            <PortifolioItem Image=@item.Image Url=@item.Url />
+            <PortifolioItem Image=@item.Image Url=@item.Url UrlGitHub=@item.UrlGitHub />
         }
     </div>
 </section>
 
 @code {
     private List<PortifolioItemData> _itemDatas = RepositoryData.PortifolioItems;
+
+    protected override async Task OnInitializedAsync() => _itemDatas = await service.GetPortifolio();
 }

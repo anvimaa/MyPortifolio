@@ -81,5 +81,19 @@ namespace MyPortifolio.Services
                 "/img/blog3.jpg",
                 "Certificado de participação na feira do inventor do Uige 2019"),
         };
+
+        public static List<ContactItemData> ContactItems = new List<ContactItemData>
+        {
+            new ContactItemData("Telefone","+244 953192762","fas fa-phone"),
+            new ContactItemData("E-mail","anvimaa@gmail.com","fas fa-envelope"),
+            new ContactItemData("WhatsApp","+244 953192762","fab fa-whatsapp"),
+        };
+
+        public static List<SocialItems> SocialItems = new List<SocialItems>
+        {
+            new SocialItems("#","fas fa-phone"),
+            new SocialItems("#","fas fa-envelope"),
+            new SocialItems("#","fab fa-whatsapp"),
+        };
     }
 }

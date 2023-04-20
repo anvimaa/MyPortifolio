@@ -1,4 +1,5 @@
 ﻿@page "/certificacoes"
+@inject AppService service
 
 <section class="container active">
     <div class="blogs-content">
@@ -17,4 +18,6 @@
 
 @code {
     private List<CertificacaoItemData> _itemDatas = RepositoryData.CertificacaoItems;
+
+    protected override async Task OnInitializedAsync() => _itemDatas = await service.GetCertificacoes();
 }

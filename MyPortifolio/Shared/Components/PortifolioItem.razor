@@ -5,7 +5,7 @@
     <div class="hover-items">
         <h3>Ver Projecto</h3>
         <div class="icons">
-            @if (UrlGitHub != string.Empty)
+            @if (UrlGitHub != string.Empty && UrlGitHub != "#")
             {
                 <SocialIcon Url=@UrlGitHub Icon="fab fa-github" Class="icon" />
             }

@@ -25,8 +25,5 @@
 @code {
     private PersonalInfo _data = RepositoryData.PersonalInfo;
 
-    protected override async Task OnInitializedAsync()
-    {
-        _data = await service.GetPersonalInfo();
-    }
+    protected override async Task OnInitializedAsync() => _data = await service.GetPersonalInfo();
 }

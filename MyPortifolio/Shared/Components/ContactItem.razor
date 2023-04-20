@@ -3,7 +3,7 @@
         <i class=@Icon></i>
         <span>@Title</span>
     </div>
-    <p>@Text</p>
+    <p>@Description</p>
 </div>
 
 @code {
@@ -12,5 +12,5 @@
     [Parameter]
     public string Title { get; set; } = string.Empty;
     [Parameter]
-    public string Text { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
 }

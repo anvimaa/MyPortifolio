@@ -1,6 +1,7 @@
 ﻿@page "/about"
+@inject AppService service
 
-<PageTitle>Portifólio - @RepositoryData.PersonalInfo.FullName</PageTitle>
+<PageTitle>Portifólio - @_data.PersonalInfo.FullName</PageTitle>
 
 <section class="container about active">
 
@@ -9,12 +10,12 @@
     <div class="about-container">
         <div class="left-about">
             <h4>Informações sobre min</h4>
-            <p>@RepositoryData.PersonalInfo.Description</p>
+            <p>@_data.PersonalInfo.Description</p>
             <CVButton />
         </div>
 
         <div class="right-about">
-            @foreach (var item in RepositoryData.AboutItems)
+            @foreach (var item in _data.AboutItems)
             {
                 <AboutItem Title=@item.Title PrimaryText=@item.PrimaryText SecundaryText=@item.SecundaryText />
             }
@@ -26,7 +27,7 @@
         <StatTitle Title="minhas HABILIDADES" />
 
         <div class="progress-bars">
-            @foreach (var item in _itemDatas)
+            @foreach (var item in _data.ProgressBars)
             {
                 <ProgressBar Title=@item.Title Percent=@item.Percent />
             }
@@ -36,7 +37,7 @@
     <StatTitle Title="Linha do Tempo..." />
 
     <div class="timeline">
-        @foreach (var item in RepositoryData.TimeLineItems)
+        @foreach (var item in _data.TimeLines)
         {
             <TimeLineItem Title=@item.Title Position=@item.Position Local=@item.Local Description=@item.Description Icon=@item.Icon />
         }
@@ -44,5 +45,7 @@
 </section>
 
 @code {
-    private List<ProgressBarData> _itemDatas = RepositoryData.ProgressBars;
+    private AboutViewModel _data = new AboutViewModel();
+
+    protected override async Task OnInitializedAsync() => _data = await service.GetAbouts();
 }
