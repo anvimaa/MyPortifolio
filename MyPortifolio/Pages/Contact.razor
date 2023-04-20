@@ -1,4 +1,5 @@
 ﻿@page "/contact"
+@inject AppService service
 
 <section class="container contact active">
     <div class="contact-container">
@@ -10,14 +11,14 @@
                 <h4>Entre em Contacto comigo</h4>
                 <p></p>
                 <div class="contact-info">
-                    @foreach (var item in _contacts)
+                    @foreach (var item in _data.Contacts)
                     {
                         <ContactItem Icon=@item.Icon Title=@item.Title Description=@item.Description />
                     }
                 </div>
                 <div class="contact-icons">
                     <div class="contact-icon">
-                        @foreach (var item in _socials)
+                        @foreach (var item in _data.Socials)
                         {
                             <SocialIcon Icon=@item.Icon Url=@item.Url />
                         }
@@ -50,6 +51,7 @@
 </section>
 
 @code {
-    private List<ContactItemData> _contacts = RepositoryData.ContactItems;
-    private List<SocialItems> _socials = RepositoryData.SocialItems;
+    ContactViewModel _data = new ContactViewModel();
+
+    protected override async Task OnInitializedAsync() => _data = await service.GetContasPage();
 }
